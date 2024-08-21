@@ -1,0 +1,9 @@
+input_shape = X_train.shape[1]
+encoding_dim = 11
+
+input_layer = tf.keras.Input(shape=(input_shape,))
+encoded = tf.keras.layers.Dense(encoding_dim, activation='relu')(input_layer)
+decoded = tf.keras.layers.Dense(input_shape, activation='sigmoid')(encoded)
+
+autoencoder = tf.keras.Model(input_layer, decoded)
+autoencoder.compile(optimizer='adam', loss='mse'
