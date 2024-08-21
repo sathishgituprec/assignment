@@ -1,0 +1,1 @@
+autoencoder.fit(X_train, X_train, epochs=100, batch_size=32, validation_data=(X_test, X_test))
